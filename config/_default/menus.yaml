@@ -7,7 +7,7 @@ main:
   - name: Gallery
     url: '#slider'
     weight: 10
-  - name: About
+  - name: About me
     url: '#about'
     weight: 20
   - name: Posts
