@@ -66,6 +66,6 @@ study ocean acidification as a postdoctoral fellow before returning to
 Madison for a second postdoctoral fellowship. In my spare time, I like
 to build things (home rennovation), cook things (from sourdoughs to
 smoked meats to veggie burgers from scratch), and paint miniatures for
-tabletop gaming.
+tabletop gaming. Hmm
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
