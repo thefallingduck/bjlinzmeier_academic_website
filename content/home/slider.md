@@ -39,10 +39,9 @@ item:
     #overlay_color: '#555'
     overlay_img: Ammonite-gold.jpg
     #overlay_filter: 0.5
-  - title: Right
+  - title: Nautilus
     #content: 'I am right aligned 😄'
     align: left
-    font_color: '#555'
     #overlay_color: '#333'
     overlay_img: ROM_Nautilus.jpg
     #overlay_filter: 0.5
