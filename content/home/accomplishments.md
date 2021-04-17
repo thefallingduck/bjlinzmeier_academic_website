@@ -27,7 +27,7 @@ item:
   date_end: ""
   date_start: "2018-10-01"
   description: ""
-  organization: Coursera
+  organization: Coursera!
   organization_url: https://www.coursera.org
   title: Neural Networks and Deep Learning
   url: ""
