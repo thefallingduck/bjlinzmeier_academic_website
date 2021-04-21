@@ -64,8 +64,8 @@ in situ geochemistry to a variety of ecological questions related to
 modern and fossil cephalopods. I moved to Northwestern University to
 study ocean acidification as a postdoctoral fellow before returning to
 Madison for a second postdoctoral fellowship. In my spare time, I like
-to build things (home rennovation), cook things (from sourdoughs to
+to build things (home renovation), cook things (from sourdoughs to
 smoked meats to veggie burgers from scratch), and paint miniatures for
-tabletop gaming. Hmm
+tabletop gaming.
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/demo_resume.pdf" "newtab" >}}curriculum vitae{{< /staticref >}}.

@@ -7,7 +7,7 @@ widget: experience
 headless: true
 
 # Order that this section appears on the page.
-weight: 40
+weight: 30
 
 title: Experience
 subtitle:
@@ -25,7 +25,7 @@ experience:
   - title: Associate Professor of Earth Sciences
     company: University of South Alabama
     company_url: ''
-    location: Alabama
+    location: Mobile, Alabama
     date_start: '2021-08-15'
     date_end: ''
     description: |2-
@@ -37,16 +37,16 @@ experience:
         
   - title: Postdoctoral Researcher
     company: University of Wisconsin - Madison
-    company_url: ''
-    location: Wisconsin
+    company_url: 'http://geoscience.wisc.edu/geoscience/'
+    location: Madison, Wisconsin
     date_start: '2019-10-01'
     date_end: '2021-07-31'
     description: Worked in the WiscSIMS lab and on the Sparrow project.
     
   - title: Ubben postdoctoral fellow 
     company: Northwestern University
-    company_url: ''
-    location: Illinois
+    company_url: 'https://www.earth.northwestern.edu/'
+    location: Evanston, Illinois
     date_start: '2017-09-01'
     date_end: '2019-09-30'
     description: Research ocean acidification with Calcium isotopes.
