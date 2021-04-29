@@ -44,7 +44,7 @@ contact_links:
     link: 'https://twitter.com/delta18o'
   - icon: skype
     icon_pack: fab
-    name: Skype Me?
+    name: Skype Me
     link: 'skype:echo123?call'
 
 # Site header
