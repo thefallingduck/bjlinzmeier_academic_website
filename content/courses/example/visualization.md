@@ -16,7 +16,7 @@ Learn how to visualize data with Plotly.
 
 {{< youtube hSPmj7mK6ng >}}
 
-## Quiz
+## Quiz yeah!
 
 {{< spoiler text="When is a heatmap useful?" >}}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
