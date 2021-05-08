@@ -6,7 +6,7 @@ authors:
   - D. K. Richter
   - R. D. Neuser
   - N. Jöns
-  - B. J. Linzmeier
+  - Benjamin J. Linzmeier
   - R. E. Lemanis
   - F. Fusseis
   - X. Xiao
@@ -49,6 +49,7 @@ image:
   caption: Structural and ultrastructural composition of belemnite rostra.
   focal_point: Smart
   preview_only: false
+projects: ["cephalopods"]
 summary: ""
 lastmod: 2021-04-15T21:17:13-05:00
 title: "Evidence for a composite organic–inorganic fabric of belemnite rostra:
@@ -62,8 +63,6 @@ tags:
   - '"diagenesis"'
   - '"ultrastructure"'
   - '"Belemnite"'
-projects:
-  - Cephalopods
 date: 2016-07-01
 publishDate: 2021-04-16T02:17:36.929370Z
 ---

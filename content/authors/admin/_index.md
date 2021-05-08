@@ -22,7 +22,7 @@ interests:
 organizations:
 - name: University of South Alabama
   url: https://www.southalabama.edu/
-role: Associate Professor of Earth Sciences
+role: Assistant Professor of Earth Sciences
 social:
 - icon: envelope
   icon_pack: fas

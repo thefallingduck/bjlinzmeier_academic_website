@@ -27,8 +27,8 @@ content:
   filter_button:
   - name: All
     tag: '*'
-  - name: Cephalopod paleobiology
-    tag: Cephalopods
+  - name: Paleontology
+    tag: Paleontology
   - name: Other
     tag: Demo
 

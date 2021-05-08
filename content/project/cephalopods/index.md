@@ -6,10 +6,10 @@ authors: []
 url_video: ""
 date: 2021-05-08T01:24:04.277Z
 categories: []
-external_link: google.com
+external_link: ""
 url_slides: ""
 title: Cephalopod biology
-tags: []
+tags: [Paleontology]
 links: []
 image:
   caption: Photo of Maorites ammonite from Seymour Island, Antarctica.
