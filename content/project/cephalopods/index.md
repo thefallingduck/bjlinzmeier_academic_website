@@ -6,7 +6,7 @@ authors: []
 url_video: ""
 date: 2021-05-08T01:24:04.277Z
 categories: []
-external_link: www.google.com
+external_link: google.com
 url_slides: ""
 title: Cephalopod biology
 tags: []
