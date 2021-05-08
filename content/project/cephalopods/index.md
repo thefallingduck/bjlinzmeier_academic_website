@@ -1,42 +1,22 @@
 ---
-# Documentation: https://wowchemy.com/docs/managing-content/
-
-title: "Cephalopods"
-summary: "Modern and fossil cephalopod ecology."
-authors: []
-tags: []
-categories: []
-date: 2021-04-17T12:45:37-05:00
-
-# Optional external URL for project (replaces project detail page).
-external_link: ""
-
-# Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
-# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
-image:
-  caption: "Photo of Maorites ammonite from Seymour Island, Antarctica."
-  focal_point: "Smart"
-  preview_only: false
-
-# Custom links (optional).
-#   Uncomment and edit lines below to show custom links.
-# links:
-# - name: Follow
-#   url: https://twitter.com
-#   icon_pack: fab
-#   icon: twitter
-
-url_code: ""
-url_pdf: ""
-url_slides: ""
-url_video: ""
-
-# Slides (optional).
-#   Associate this project with Markdown slides.
-#   Simply enter your slide deck's filename without extension.
-#   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
-#   Otherwise, set `slides = ""`.
 slides: ""
+url_pdf: ""
+summary: Modern and fossil cephalopod ecology.
+authors: []
+url_video: ""
+date: 2021-05-08T01:24:04.277Z
+categories: []
+external_link: www.google.com
+url_slides: ""
+title: Cephalopod biology
+tags: []
+links: []
+image:
+  caption: Photo of Maorites ammonite from Seymour Island, Antarctica.
+  focal_point: Smart
+  preview_only: false
+url_code: ""
 ---
-Cephalopods are nifty! I study them using geochemistry mostly.
+I use geochemistry to probe the ecology of modern and extinct cephalopods. This group is an important component modern and ancient marine ecosystems. Ammonoids are a particularly important group in the fossil record and are used to construct the geological timescale and study evolution.
+
+I am interested in using new geochemical tools to investigate questions related to behavior, lifespan, and metabolism at a variety of spatial and temporal scales.
