@@ -15,9 +15,9 @@ education:
 email: "blinzmeier@wisc.edu"
 highlight_name: false
 interests:
-- Biomineralization
-- Paleoclimate
 - Paleobiology
+- Paleoclimate
+- Biomineralization
 - Data infrastructure
 organizations:
 - name: University of South Alabama
