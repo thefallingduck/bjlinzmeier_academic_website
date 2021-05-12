@@ -4,11 +4,12 @@ date: 2021-05-08T03:16:20.638Z
 summary: Organize, streamline, and communicate analytical data.
 draft: false
 featured: false
+external_link: sparrow-data.org
 links:
   - url: sparrow-data.org
     name: Sparrow
     icon_pack: far
-    icon: bird
+    icon: feather
 image:
   filename: featured
   focal_point: Smart
