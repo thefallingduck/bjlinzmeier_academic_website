@@ -13,8 +13,8 @@ authors:
 - Kouki Kitajima
 - John W. Valley
 tags:
-- '"PhD"'
-categories: []
+- 'PhD'
+categories: [PhD]
 date: '2018-11-01'
 lastmod: 2021-04-15T21:17:15-05:00
 featured: false

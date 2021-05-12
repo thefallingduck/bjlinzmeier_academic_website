@@ -1,6 +1,5 @@
 ---
-bio: My research interests include biomineralization and geochemistry of sedimentary rocks and fossils.
-
+title: "Benjamin J. Linzmeier"
 education:
   courses:
   - course: PhD in Geoscience
@@ -12,8 +11,8 @@ education:
   - course: BSc in Geology
     institution: Bowling Green State University
     year: 2009
-email: "blinzmeier@wisc.edu"
-highlight_name: false
+email: blinzmeier@southalabama.edu
+highlight_name: no
 interests:
 - Paleobiology
 - Paleoclimate
@@ -28,7 +27,7 @@ social:
   icon_pack: fas
   link: /#contact
 - display:
-    header: true
+    header: yes
   icon: twitter
   icon_pack: fab
   label: Follow me on Twitter
@@ -39,9 +38,6 @@ social:
 - icon: github
   icon_pack: fab
   link: https://github.com/thefallingduck
-# - icon: linkedin
-#   icon_pack: fab
-#   link: https://www.linkedin.com/
 - icon: researchgate
   icon_pack: fab
   link: https://www.researchgate.net/profile/Benjamin-Linzmeier
@@ -51,8 +47,9 @@ social:
 - icon: publons
   icon_pack: ai
   link: https://publons.com/researcher/AAD-5397-2020/
-superuser: true
-title: Benjamin J. Linzmeier
+superuser: yes
+bio: My research interests include biomineralization and geochemistry of sedimentary
+  rocks and fossils.
 ---
 
 My interest in fossils was sparked by watching PBS as a child in rural central Wisconsin. I grew up surrounded by cornfields on the surface of the [Great Unconformity](https://macrostrat.org/map/#/z=8.1/x=-89.8462/y=44.3998/bedrock/lines/ "Link to Macrostrat.org") and had to content myself by collecting fieldstones (soapstone and quartz). I initially wanted to study dinosaurs. I found my way to my present work through fateful statistics and isotope geochemistry classes that occurred in conjunction with encountering the [Buckhorn Asphalt](https://link.springer.com/article/10.1007/s10347-009-0181-9 "Link to paper") part of the [Boggy Formation](https://macrostrat.org/sift/#/strat_name/212 "Link to Formation info"), in Oklahoma. I became interested in understanding the ecology of cephalopods by using geochemical methods.
