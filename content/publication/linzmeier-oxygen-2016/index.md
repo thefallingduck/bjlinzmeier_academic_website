@@ -5,7 +5,7 @@ title: Oxygen isotope variability within Nautilus shell growth bands
 subtitle: ''
 summary: ''
 authors:
-- Benjamin J. Linzmeier
+- admin
 - Reinhard Kozdon
 - Shanan E. Peters
 - John W. Valley

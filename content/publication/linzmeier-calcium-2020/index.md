@@ -6,7 +6,7 @@ title: Calcium isotope evidence for environmental variability before and across 
 subtitle: ''
 summary: ''
 authors:
-- Benjamin J. Linzmeier
+- admin
 - Andrew D. Jacobson
 - Bradley B. Sageman
 - Matthew T. Hurtgen

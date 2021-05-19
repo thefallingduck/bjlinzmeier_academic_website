@@ -12,7 +12,7 @@ education:
     institution: Bowling Green State University
     year: 2009
 email: blinzmeier@southalabama.edu
-highlight_name: no
+highlight_name: yes
 interests:
 - Paleobiology
 - Paleoclimate

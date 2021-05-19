@@ -6,7 +6,7 @@ title: Refining the interpretation of oxygen isotope variability in free-swimmin
 subtitle: ''
 summary: ''
 authors:
-- Benjamin J. Linzmeier
+- admin
 tags:
 - '"Modeling"'
 - '"Sclerochronology"'

@@ -6,7 +6,7 @@ title: Ion microprobe–measured stable isotope evidence for ammonite habitat an
 subtitle: ''
 summary: ''
 authors:
-- Benjamin J. Linzmeier
+- admin
 - Neil H. Landman
 - Shanan E. Peters
 - Reinhard Kozdon

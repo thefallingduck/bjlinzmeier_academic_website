@@ -2,11 +2,11 @@
 publication_types:
   - "2"
 authors:
-  - R. Hoffmann
+  - René Hoffmann
   - D. K. Richter
   - R. D. Neuser
   - N. Jöns
-  - Benjamin J. Linzmeier
+  - admin
   - R. E. Lemanis
   - F. Fusseis
   - X. Xiao

@@ -8,7 +8,7 @@ authors:
 - René Hoffmann
 - Joshua S. Slattery
 - Isabelle Kruta
-- Benjamin J. Linzmeier
+- admin
 - Robert E. Lemanis
 - Aleksandr Mironenko
 - Stijn Goolaerts

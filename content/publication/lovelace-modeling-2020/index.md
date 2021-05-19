@@ -10,7 +10,7 @@ authors:
 - David M. Lovelace
 - Scott A. Hartman
 - Paul D. Mathewson
-- Benjamin J. Linzmeier
+- admin
 - Warren P. Porter
 tags:
 - '"Dinosaurs"'

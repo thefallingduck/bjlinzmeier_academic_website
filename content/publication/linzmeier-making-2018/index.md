@@ -5,7 +5,7 @@ title: Making maps on a micrometer scale
 subtitle: ''
 summary: ''
 authors:
-- Benjamin J. Linzmeier
+- admin
 - Kouki Kitajima
 - Adam C. Denny
 - Jacob N. Cammack
