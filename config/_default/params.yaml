@@ -21,9 +21,9 @@ twitter: '@delta18O'
 # Contact (edit or remove options as required)
 
 email: blinzmeier@southalabama.edu
-phone: 888 888 88 88
+phone: 251 460 6381
 address:
-  street: Earth Sciences University of South Alabama LSCB 136
+  street: Earth Sciences University of South Alabama LSCB 343
   city: Mobile
   region: AL
   postcode: '36688'
@@ -32,10 +32,11 @@ address:
 coordinates:
   latitude: '30.6976'
   longitude: '-88.1777'
-directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
+directions: Enter LSCB Building from North Side using the stairs, walk to 3rd floor, room is beyond an outer hallway entrance
 office_hours:
-  - 'Monday 10:00 to 13:00'
-  - 'Wednesday 09:00 to 10:00'
+  - 'Monday 1 to 3 PM'
+  - 'Tuesday 1 to 3 PM'
+  - 'Thursday 1 to 3 PM'
 appointment_url: 'https://calendly.com'
 contact_links:
   - icon: twitter

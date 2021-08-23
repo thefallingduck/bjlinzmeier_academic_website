@@ -12,9 +12,10 @@ type: book
 
 ## Learning objectives
 
-- Fundamental {{<hl>}}Python programming skills{{</hl>}}
-- {{<hl>}}Statistical concepts{{</hl>}} and how to apply them in practice
-- Gain experience with the {{<hl>}}Scikit{{</hl>}}, including data visualization with {{<hl>}}Plotly{{</hl>}} and data wrangling with {{<hl>}}Pandas{{</hl>}}
+- Observe, describe, classify, and communicate characteristics of sediments and sedimentary rocks.
+- Develop a framework for building hypotheses about the distributions of sediments, sedimentary structures, and sedimentary environments.
+- Communicate sedimentary geology to a variety of audiences using different genres of writing.
+- Read and summarize scientific papers focused on sedimentary geology and related fields.
 
 ## Field trips
 
