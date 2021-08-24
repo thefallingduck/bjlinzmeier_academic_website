@@ -6,7 +6,7 @@ draft: false
 featured: false
 tags:
   - Paleontology
-external_link: https://www.skeletaldrawing.com/
+external_link:
 links: []
 image:
   filename: featured

@@ -1,8 +1,8 @@
 ---
 date: "2021-05-03"
 linkTitle: Physical Geology
-summary: Study of the history of life and geological change.
-title: "\U0001F30D Physical Geology"
+summary: Study of the Earth as a series of systems.
+title: "\U0001F30B Physical Geology"
 type: book
 ---
 

@@ -21,15 +21,14 @@ type: book
 
 Geologists have a place in the clean energy future. Sedimentology is useful for current energy jobs (e.g. oil and gas), groundwater and environmental remediation, and clean energy or carbon capture and storage in the future.
 
-The demand for skilled data science practitioners is rapidly growing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi.
 
 ## Writing assignments
 
 This is a writing intensive course. You will be tasked with writing regularly and in a style to communicate information clearly and concisely.
 
-## Courses in this program
-
-{{< list_children >}}
+# ## Courses in this program
+# 
+# {{< list_children >}}
 
 ## Meet your instructor
 
@@ -45,4 +44,4 @@ Yes. You must have taken X,Y,Z or have instructor consent.
 Every fall semester.
 {{< /spoiler >}}
 
-{{< cta cta_text="Begin the course" cta_link="python" >}}
+{{< cta cta_text="Register for the course" cta_link="https://www.southalabama.edu/colleges/artsandsci/registration.html" >}}

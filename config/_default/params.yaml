@@ -37,16 +37,16 @@ office_hours:
   - 'Monday 1 to 3 PM'
   - 'Tuesday 1 to 3 PM'
   - 'Thursday 1 to 3 PM'
-appointment_url: 'https://calendly.com'
+appointment_url: 'https://calendly.com/bjlinzmeier'
 contact_links:
-  - icon: twitter
-    icon_pack: fab
-    name: DM Me
-    link: 'https://twitter.com/delta18o'
-  - icon: skype
-    icon_pack: fab
-    name: Skype Me
-    link: 'skype:echo123?call'
+  # - icon: twitter
+  #   icon_pack: fab
+  #   name: DM Me
+  #   link: 'https://twitter.com/delta18o'
+  # - icon: skype
+  #   icon_pack: fab
+  #   name: Skype Me
+  #   link: 'skype:echo123?call'
 
 # Site header
 
@@ -151,3 +151,4 @@ cms:
 icon:
   pack:
     ai: true
+
