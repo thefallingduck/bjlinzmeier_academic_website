@@ -12,13 +12,8 @@ type: book
 
 ## Learning objectives
 
-- Fundamental {{<hl>}}Python programming skills{{</hl>}}
-- {{<hl>}}Statistical concepts{{</hl>}} and how to apply them in practice
-- Gain experience with the {{<hl>}}Scikit{{</hl>}}, including data visualization with {{<hl>}}Plotly{{</hl>}} and data wrangling with {{<hl>}}Pandas{{</hl>}}
+- In development.
 
-## Field trips
-
-The demand for skilled data science practitioners is rapidly growing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi.
 
 ## Courses in this program
 
@@ -38,4 +33,4 @@ No, there are none.
 Every semester, but with different instructors.
 {{< /spoiler >}}
 
-{{< cta cta_text="Begin the course" cta_link="python" >}}
+{{< cta cta_text="Register for the course" cta_link="https://www.southalabama.edu/colleges/artsandsci/registration.html" >}}
