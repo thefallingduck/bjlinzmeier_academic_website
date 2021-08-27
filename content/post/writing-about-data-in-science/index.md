@@ -1,9 +1,9 @@
 ---
 title: Writing about data in science
 subtitle: Making arguments from observations
-date: 2021-06-30T19:00:08.812Z
+date: 2021-08-24T14:11:06.401Z
 summary: A few thoughts on technical writing in the geosciences.
-draft: true
+draft: false
 featured: false
 authors:
   - admin
