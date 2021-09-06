@@ -1,7 +1,7 @@
 ---
 title: Writing intensive Sedimentology course
 subtitle: Sharing materials
-date: 2021-09-10T16:52:52.087Z
+date: 2021-09-06T17:00:51.446Z
 draft: false
 featured: false
 tags:
