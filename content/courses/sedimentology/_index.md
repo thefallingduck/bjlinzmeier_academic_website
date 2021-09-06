@@ -26,9 +26,9 @@ Geologists have a place in the clean energy future. Sedimentology is useful for 
 
 This is a writing intensive course. You will be tasked with writing regularly and in a style to communicate information clearly and concisely.
 
-# ## Courses in this program
-# 
-# {{< list_children >}}
+## Courses in this program
+ 
+{{< list_children >}}
 
 ## Meet your instructor
 

@@ -20,10 +20,18 @@ I mentioned teaching this course on Twitter a few weeks ago and there was some i
 
 Here is a current copy of my course syllabus.
 
+{{< icon name="download" pack="fas" >}} Download the current {{< staticref "media/Sedimentology_Syllabus.pdf" "newtab" >}}syllabus draft.{{< /staticref >}}
+
 ## Semester project overview handout
 
 You can see the semester project overview handout here.
 
+{{< icon name="download" pack="fas" >}} Download the current {{< staticref "media/Semester-Project-overview.pdf" "newtab" >}}Semester project overview handout.{{< /staticref >}}
+
 ## Scaffolding first abstract writing
 
 I have also uploaded the handout for the first abstract writing.
+
+{{< icon name="download" pack="fas" >}} Download the current {{< staticref "media/Abstract1assignment.pdf" "newtab" >}}First abstract handout.{{< /staticref >}}
+
+Watch this blog for more information on how I am teaching writing in Sedimentology this fall.
