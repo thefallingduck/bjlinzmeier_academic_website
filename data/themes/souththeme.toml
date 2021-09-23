@@ -1,0 +1,20 @@
+# Theme metadata
+name = "souththeme"
+
+# Is theme light or dark?
+light = true
+
+# Primary
+primary = "#BF0D3E"
+
+# Menu
+menu_primary = "#00205B"
+menu_text = "#f7f7f7"
+menu_text_active = "#BF0D3E"
+menu_title = "#f7f7f7"
+
+# Backgrounds
+home_section_odd = "#999999"
+home_section_even = "#f7f7f7"
+
+font = "southfonts"
