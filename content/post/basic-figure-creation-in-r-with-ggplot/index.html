@@ -1,0 +1,199 @@
+---
+title: Basic figure creation in R with ggplot
+date: 2021-10-12T23:15:18.933Z
+summary: Basic figures in R using `ggplot` and `tidyverse` functions to analyze
+  grain size data. This is a first draft tutorial document for Sedimentology
+  students and focuses on grain size data available from NOAA.
+draft: true
+featured: false
+tags:
+  - teaching
+  - tutorial
+  - R
+  - figures
+image:
+  filename: featured
+  focal_point: Smart
+  preview_only: false
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="scientific-programming" class="section level2">
+<h2>Scientific programming</h2>
+<p>R is an open source programming language with a strong use in data analysis. Generally it is used more often for open statistical tools. It is used by some in the Geoscience community.</p>
+<p>Python is another widely used programming language in Geosciences. It has similar capabilities to R but different strengths.</p>
+<p>Much of the most useful scientific programming you are likely to do focuses on data reduction and processing to test specific hypotheses. Creating figures using code in either R or Python allows you to design your data display while collecting data. You can also be sure to link the data to the figure easily and in a reproducible way.</p>
+</div>
+<div id="lab-tasks" class="section level2">
+<h2>Lab tasks</h2>
+<p>In this lab, you will be making figures using randomly generated data and publicly available geology data. I have code chunks embedded below that you can copy/paste into your own instance of R Studio and then execute.</p>
+</div>
+<div id="loading-packages" class="section level2">
+<h2>Loading packages</h2>
+<p>R is powerful because people make and share <em>packages</em> of code that can streamline doing scientific tasks. <em>Packages</em> contain smaller <em>functions</em> that are self-contained and accomplish a set of specific tasks. For example, a very simple function is defined below.</p>
+<pre class="r"><code>AddTwo &lt;- function(x){
+  y &lt;- x + 2
+  return(y)
+}
+
+AddTwo(3)</code></pre>
+<pre><code>## [1] 5</code></pre>
+<p>This function takes a number given to it, X, and returns that number plus two. Other functions have more in depth operations, but ideally code is written to execute the smallest steps possible for each action to improve human readability and ease troubleshooting.</p>
+<p>We will use the packages below. They need to be opened after installing. Official packages for R are shared on CRAN. The functions below install and load the packages. The package <code>ggplot2</code> uses the ‘grammar of graphics’ to make complex plots efficient to code. The package <code>tidyverse</code> includes utilities for data summarization and transformation. For additional documentation about different commonly used R functions <a href="https://www.rstudio.com/resources/cheatsheets/">look at these cheetsheets</a>.</p>
+<pre class="r"><code># install.packages(&quot;ggplot2&quot;)
+# install.packages(&quot;tidyverse&quot;)
+library(ggplot2)
+library(tidyverse)</code></pre>
+</div>
+<div id="making-figures" class="section level2">
+<h2>Making figures</h2>
+<p>The simplest figure we can make is a crossplot with X and Y data. Below is an example using randomly generated X and Y points. This plot and dataset use only the basic functions included with R (commonly known as Base R).</p>
+<div id="base-r" class="section level3">
+<h3>Base R</h3>
+<pre class="r"><code>N &lt;- 100
+X &lt;- rnorm(n = N, mean = 5, sd = 2)
+Y &lt;- rnorm(n = N, mean = 8, sd = 3)
+
+plot(x = X, y = Y)</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/random_data-1.png" width="672" /></p>
+</div>
+<div id="simple-crossplot-with-ggplot" class="section level3">
+<h3>Simple crossplot with ggplot</h3>
+<p>To do this same thing with <code>ggplot2</code> we use a slightly different syntax for the figure. First we must make a data frame with our data (think excel table).</p>
+<pre class="r"><code>RandomData &lt;- as.data.frame(cbind(X,Y))
+
+ggplot(data = RandomData, aes(x = X, y = Y))+
+  geom_point()+
+  theme_bw()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/random_ggplot-1.png" width="384" /></p>
+</div>
+<div id="more-complex-with-ggplot" class="section level3">
+<h3>More complex with ggplot</h3>
+<p>Let’s get more complicated, because we often want to use data containing multiple axes (e.g. location, time). Using software other than Excel makes these sorts of figures much easier to create. My preferred method is using the <code>ggplot</code> and associated packages for R. With <code>ggplot</code>, the <a href="https://www.tandfonline.com/doi/abs/10.1198/jcgs.2009.07098">grammar of graphics</a> guides the creation of a plot and allows users to trace the source of data and make adjustments quickly. There are also preset <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">themes for ggplot</a> that quickly adjust the overall style of figures for a more professional and consistent look.</p>
+<p>In the code below we use the dataframe <code>RandomData</code> to feed into creating the plot. We set plot aesthetics using <code>aes</code> and name individual parameters we want to include in the plot. Here we use <code>x</code>, <code>y</code>, <code>color</code>, and <code>shape</code> because we are interested in seeing all of these permutations in our crossplot. We then indicate what type of plot we want to make using <code>geom_point</code> to indicate a scatterplot. The code could stop here, but I also adjust the size of the points with <code>size = 2</code> and adjust the theme of the plot using <code>theme_bw()</code>. Note that each adjustment is included through the use of a <code>+</code> after the previous component of the plot.</p>
+<pre class="r"><code>Time &lt;- 1:N
+Site &lt;- sample( LETTERS[1:4], 50, replace=TRUE, prob=c(0.2, 0.2, 0.4, 0.02) )
+
+RandomData &lt;- data.frame(X,Y, Time, Site)
+
+ggplot(data = RandomData, aes(x = X, y = Y, color = Time, shape = Site))+
+  geom_point(size = 2)+
+  theme_bw()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/randomExtra_ggplot-1.png" width="672" /></p>
+</div>
+<div id="time-series-ggplot" class="section level3">
+<h3>Time series ggplot</h3>
+<p>It is also easier to create time series plots with this. Below, I add lines that connect the points from each site. Note that I use both <code>geom_point</code> and <code>geom_line</code> to create layered lines and points. If you use one or the other you will only get one or the other.</p>
+<pre class="r"><code>ggplot(RandomData, aes(x = Time, y = Y, color = Site))+
+  geom_point(size = 2)+
+  geom_line()+
+  theme_bw()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/timeSeries-1.png" width="672" /></p>
+</div>
+</div>
+<div id="grain-size-analysis" class="section level2">
+<h2>Grain size analysis</h2>
+<p>We have estimated and qualitatively described grain sizes so far in class. Quantitative measurements can be important for monitoring processes in environments and subdividing paleoenvironments. We will likely talk about this more, but I wanted to add a crash course in it with our lab creating figures.</p>
+<p>As with any population of measurements, there are multiple parameters than can be extracted from the measurement of a single variable within a sample. Below are aspects of distributions that are used to describe sediment size distributions.</p>
+<div id="descriptive-statistics" class="section level3">
+<h3>Descriptive statistics</h3>
+<div id="mean" class="section level4">
+<h4>Mean</h4>
+<p>Sum of all values divided by the number of values.
+<!-- $$\bar{X} = \frac{\sum_{i=1}^{n} x_{i}}{n}$$ --></p>
+</div>
+<div id="standard-deviation" class="section level4">
+<h4>Standard deviation</h4>
+<p>Description of how narrowly distributed the data are. Calculated based on distance of individual analyses from the mean.
+<!-- $$s = \sqrt{s^{2}} = \sqrt{\frac{SS}{N - 1}} = \sqrt{\frac{\sum (x_{i} - \bar{x})^{2}}{N - 1}}$$ --></p>
+</div>
+<div id="skew" class="section level4">
+<h4>Skew</h4>
+<p>Can be interpreted based on the difference between the mean and the median of the distribution. The mean is displaced towards the longer tail of the distribution.</p>
+</div>
+<div id="kurtosis" class="section level4">
+<h4>Kurtosis</h4>
+<p>Increasing kurtosis is flattening the distribution. Higher kurtosis is more width and less hight near the mean.</p>
+<p>Below is an example of a probability distribution based on the random data. Blue vertical lines are equal to two times the standard deviation and encompass 95% of the dataset. The black vertical line is the median value and the red vertical line is the mean.</p>
+<pre class="r"><code>ggplot(RandomData, aes(x = X))+
+  geom_density()+
+  geom_vline(aes(xintercept = mean(X)), color = &quot;red&quot;)+
+  geom_vline(aes(xintercept = median(X)), color = &quot;black&quot;)+
+  geom_vline(aes(xintercept = mean(X)+2*sd(X)), color = &quot;blue&quot;)+
+  geom_vline(aes(xintercept = mean(X)-2*sd(X)), color = &quot;blue&quot;)+
+  theme_bw()</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/probability%20density-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+<div id="real-datasets" class="section level2">
+<h2>Real datasets</h2>
+<p>Let’s load some sediment size datasets now.</p>
+<pre class="r"><code>GrainSize&lt;-read_delim(&quot;https://www.ngdc.noaa.gov/mgg/geology/data/g00127/g00127interval.txt&quot;, delim = &quot;\t&quot;)
+
+GrainSize$device &lt;- as.factor(GrainSize$device)
+
+GrainSize &lt;- GrainSize[grepl(&quot;grab&quot;, GrainSize$device),]</code></pre>
+<p>The first function above downloads, parses, and incorporates data into R all within the function. You can view other important pieces of the dataset with the following. One column, the <code>device</code> column is changed to a factor and then we select only those grain size analyses that are from grab samples using a <code>regex</code> match.</p>
+<p><strong>If you need to figure out what a function does, you can enter the name of the function with a question mark in front of it into your console and documentation will be opened. For example <code>?read_delim()</code> opens the documentation for the function <code>read_delim</code>. If you do not know what needs to be entered use <code>??</code> in front of a simple search to look through all documentation for a useful function.</strong></p>
+<p>The function below, <code>colnames</code>, returns a vector of the column names.</p>
+<pre class="r"><code>colnames(GrainSize)</code></pre>
+<pre><code>##  [1] &quot;mggid&quot;                &quot;ship&quot;                 &quot;cruise&quot;              
+##  [4] &quot;sample&quot;               &quot;device_code&quot;          &quot;device&quot;              
+##  [7] &quot;subcore&quot;              &quot;interval&quot;             &quot;replicate&quot;           
+## [10] &quot;analysis_type&quot;        &quot;depth_top_cm&quot;         &quot;depth_top_mm&quot;        
+## [13] &quot;depth_bot_cm&quot;         &quot;depth_bot_mm&quot;         &quot;test_date&quot;           
+## [16] &quot;test_time&quot;            &quot;total_weight&quot;         &quot;coarse_meth&quot;         
+## [19] &quot;fine_meth&quot;            &quot;coarse_fine_boundary&quot; &quot;coarse_boundary&quot;     
+## [22] &quot;fine_boundary&quot;        &quot;pct_coarser&quot;          &quot;pct_finer&quot;           
+## [25] &quot;pct_gravel&quot;           &quot;pct_sand&quot;             &quot;pct_silt&quot;            
+## [28] &quot;pct_clay&quot;             &quot;pct_mud&quot;              &quot;usc_gravel&quot;          
+## [31] &quot;usc_sand&quot;             &quot;usc_fines&quot;            &quot;meth_description&quot;    
+## [34] &quot;mean_mm&quot;              &quot;mean_phi&quot;             &quot;median_phi&quot;          
+## [37] &quot;modal_phi&quot;            &quot;skewness&quot;             &quot;kurtosis&quot;            
+## [40] &quot;std_dev&quot;              &quot;sort_coeff&quot;           &quot;interval_comments&quot;</code></pre>
+<pre class="r"><code>ggplot(GrainSize, aes(x=median_phi, y=mean_phi, color = skewness))+
+  geom_point()+
+  theme_bw()</code></pre>
+<pre><code>## Warning: Removed 5347 rows containing missing values (geom_point).</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/preliminary_plot-1.png" width="672" /></p>
+</div>
+<div id="combining-datasets" class="section level2">
+<h2>Combining datasets</h2>
+<p>In the following code chunk, we download the location data, then create smaller dataframes of grain size and location to combine.</p>
+<p>We use the logical test of <code>is.na</code> to determine if an individual entry is blank. To only select non-blank entries, we use the <code>!</code> operator, that makes the logical test <em>is not NA</em>.</p>
+<p>The <code>merge</code> function combines both datasets using a few columns so we have unique locations. This allows us to start plotting grain size information, <code>mean_phi</code> for instance, against other parameters like <code>water_depth</code>.</p>
+<p>I then plot up the data with a point cloud showing the relationship between the standard deviation of the data and the mean grain size.</p>
+<pre class="r"><code>Location&lt;-read_delim(&quot;https://www.ngdc.noaa.gov/mgg/geology/data/g00127/g00127sample.txt&quot;, delim = &quot;\t&quot;)</code></pre>
+<pre><code>## 
+## -- Column specification --------------------------------------------------------
+## cols(
+##   .default = col_character(),
+##   device_code = col_double(),
+##   year = col_double(),
+##   lat = col_double(),
+##   lon = col_double(),
+##   water_depth = col_double(),
+##   core_length = col_double(),
+##   comments = col_logical()
+## )
+## i Use `spec()` for the full column specifications.</code></pre>
+<pre><code>## Warning: 17970 parsing failures.
+## row col   expected     actual                                                                 file
+##   1  -- 25 columns 26 columns &#39;https://www.ngdc.noaa.gov/mgg/geology/data/g00127/g00127sample.txt&#39;
+##   2  -- 25 columns 26 columns &#39;https://www.ngdc.noaa.gov/mgg/geology/data/g00127/g00127sample.txt&#39;
+##   3  -- 25 columns 26 columns &#39;https://www.ngdc.noaa.gov/mgg/geology/data/g00127/g00127sample.txt&#39;
+##   4  -- 25 columns 26 columns &#39;https://www.ngdc.noaa.gov/mgg/geology/data/g00127/g00127sample.txt&#39;
+##   5  -- 25 columns 26 columns &#39;https://www.ngdc.noaa.gov/mgg/geology/data/g00127/g00127sample.txt&#39;
+## ... ... .......... .......... ....................................................................
+## See problems(...) for more details.</code></pre>
+<pre class="r"><code>GrainLocation &lt;- merge(GrainSize, Location, by = c(&quot;mggid&quot;, &quot;ship&quot;, &quot;cruise&quot;, &quot;sample&quot;))
+
+ggplot(GrainLocation[GrainLocation$water_depth&lt;500,], aes(x = mean_phi, y = std_dev, color = water_depth))+
+  geom_point()+
+  theme_bw()</code></pre>
+<pre><code>## Warning: Removed 4346 rows containing missing values (geom_point).</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/location_dataset-1.png" width="672" /></p>
+</div>
