@@ -1,0 +1,115 @@
+---
+title: Making a geological map with Macrostrat and ggplot
+subtitle: ""
+date: 2021-11-15T21:24:56.821Z
+summary: Learn to use the Macrostrat API with a simple map.
+draft: false
+featured: false
+tags:
+  - R
+  - figures
+  - tutorial
+  - teaching
+image:
+  filename: alabama_cretaceous_map.png
+  focal_point: Smart
+  preview_only: false
+  alt_text: Map centered on the US State of Alabama with green outline of
+    Cretaceous rocks overlain on the grey map background.
+---
+
+Geological maps are important to include as figures in many papers. Often creating them can rely on existing figures or shapefiles that are in GIS. The [Macrostrat database](https://macrostrat.org/) contains shapefiles for many Formations that can be returned using the [API](https://macrostrat.org/api/v2/geologic_units/map).
+
+First we load the important packages. We will use data from [Natural Earth](https://www.naturalearthdata.com/) to create the basemap. We also use a few other tools to get data from [Macrostrat database](https://macrostrat.org/) and convert it to a simple feature (sf) object.
+
+
+```{r Setup packages, warning=FALSE}
+library(ggplot2)
+library(sf)
+library(ggspatial)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(geojsonsf)
+library(RCurl)
+```
+
+We load the state outlines for the map using this code.
+
+```{r basemap}
+South_base <- ne_states(country = "united states of america", returnclass = "sf")
+```
+
+Here we get data from Macrostrat. To change this to your formation of interest, use [the sift interface](https://macrostrat.org/sift/#/) to search for a unique `strat_name_id` for a formation of interest.
+
+The data are then converted to a `wkt` and finally an `sf` object.
+
+```{r}
+
+y <- getURL("https://macrostrat.org/api/v2/geologic_units/map?strat_name_id=2683&format=geojson_bare",
+            .opts = curlOptions(ssl.verifypeer=FALSE, verbose=TRUE))
+            
+sf_temp <- geojson_wkt(y)
+
+sf_map <- st_as_sf(sf_temp, wkt = 'geometry', crs = 4326) 
+
+```
+
+We then use ggplot to build the map.
+
+First, we can create just the simple background base map.
+
+```{r}
+ggplot(data = South_base) +
+  geom_sf()
+
+```
+Then we can add the geological data.
+
+```{r}
+ggplot(data = South_base) +
+  geom_sf()+
+  geom_sf(data = sf_map,
+          color = "#A6D84A",
+          fill = "#A6D84A",
+          alpha = .5)
+```
+Next we can select a smaller area and then add a North arrow.
+
+```{r}
+
+ggplot(data = South_base) +
+  geom_sf()+
+  geom_sf(data = sf_map,
+          color = "#A6D84A",
+          fill = "#A6D84A",
+          alpha = .5)+
+  coord_sf(xlim = c(-90, -82), ylim = c(28, 37.5), expand = FALSE)+
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+
+```
+
+Finally, we add a scale bar, background colors, dashes, and fill the ocean with a light blue.
+
+```{r Final Map, warning=FALSE}
+ggplot(data = South_base) +
+  geom_sf()+
+  geom_sf(data = sf_map,
+          color = "#A6D84A",
+          fill = "#A6D84A",
+          alpha = .5)+
+  coord_sf(xlim = c(-90, -82), ylim = c(28, 37.5), expand = FALSE)+
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)+
+    annotation_scale(location = "bl", width_hint = 0.5) +
+  theme(panel.grid.major = element_line(color = gray(.5),
+                                        linetype = "dashed",
+                                        size = 0.5),
+        panel.background = element_rect(fill = "aliceblue"))+
+        theme_bw()
+```
+
+And there you have a map of a geological unit overlain on a state map in R.
