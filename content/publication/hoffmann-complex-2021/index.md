@@ -43,26 +43,8 @@ projects: ["cephalopods"]
 publishDate: '2021-12-14T21:58:23.782006Z'
 publication_types:
 - '2'
-abstract: Paleotemperatures based on &delta;18O values derived from belemnites are
-  usually &ldquo;too cold&rdquo; compared to other archives and paleoclimate models.
-  This temperature bias represents a significant obstacle in paleoceanographic research.
-  Here we show geochemical evidence that belemnite calcite fibers are composed of
-  two distinct low-Mg calcite phases (CP1, CP2). Phase-specific in situ measurement
-  of &delta;18O values revealed a systematic offset of up to 2&permil; (~8 &deg;C),
-  showing a lead&ndash;lag signal between both phases in analyses spaced less than
-  25 &micro;m apart and a total fluctuation of 3.9&permil; (~16 &deg;C) within a 2
-  cm &times; 2 cm portion of a Megateuthis (Middle Jurassic) rostrum. We explain this
-  geochemical offset and the lead&ndash;lag signal for both phases by the complex
-  biomineralization of the belemnite rostrum. The biologically controlled formation
-  of CP1 is approximating isotope fractionation conditions with ambient seawater to
-  be used for temperature calculation. In contrast, CP2 indicates characteristic non-isotope
-  equilibrium with ambient seawater due to its formation via an amorphous Ca-Mg carbonate
-  precursor at high solid-to-liquid ratio, i.e., limited amounts of water were available
-  during its transformation to calcite, thus suggesting lower formation temperatures.
-  CP2 occludes syn vivo the primary pore space left after formation of CP1. Our findings
-  support paleobiological interpretations of belemnites as shelf-dwelling, pelagic
-  predators and call for a reassessment of paleoceanographic reconstructions based
-  on belemnite stable isotope data.
+abstract: Paleotemperatures based on &delta;<sup>18</sup>O values derived from belemnites are usually &ldquo;too cold&rdquo; compared to other archives and paleoclimate models. This temperature bias represents a significant obstacle in paleoceanographic research. Here we show geochemical evidence that belemnite calcite fibers are composed of two distinct low-Mg calcite phases (CP1, CP2). Phase-specific in situ measurement of &delta;<sup>18</sup>O values revealed a systematic offset of up to 2&permil; (~8 &deg;C), showing a lead&ndash;lag signal between both phases in analyses spaced less than 25 &micro;m apart and a total fluctuation of 3.9&permil; (~16 &deg;C) within a 2 cm &times; 2 cm portion of a <i>Megateuthis</i> (Middle Jurassic) rostrum. We explain this geochemical offset and the lead&ndash;lag signal for both phases by the complex biomineralization of the belemnite rostrum. The biologically controlled formation of CP1 is approximating isotope fractionation conditions with ambient seawater to be used for temperature calculation. In contrast, CP2 indicates characteristic non-isotope equilibrium with ambient seawater due to its formation via an amorphous Ca-Mg carbonate precursor at high solid-to-liquid ratio, i.e., limited amounts of water were available during its transformation to calcite, thus suggesting lower formation temperatures. CP2 occludes <i>syn vivo</i> the primary pore space left after formation of CP1. Our findings support paleobiological interpretations of belemnites as shelf-dwelling, pelagic predators and call for a reassessment of paleoceanographic reconstructions based on belemnite stable isotope data.
+
 publication: '*Minerals*'
 url_pdf: https://www.mdpi.com/2075-163X/11/12/1406
 doi: 10.3390/min11121406
