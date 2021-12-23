@@ -1,0 +1,145 @@
+---
+title: An Rmarkdown syllabus template
+date: 2021-12-23T20:14:10.838Z
+summary: Access an Rmd syllabus template with some explanatory text.
+draft: false
+featured: false
+authors:
+  - admin
+tags:
+  - teaching
+  - syllabus
+  - R
+image:
+  filename: featured
+  focal_point: Smart
+  preview_only: false
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>This is a work in progress, but I thought it would be useful to share. I am making three course syllabuses for spring semester and have put together an R markdown template to help speed up the process. There are several features that work for my new workflow and may be useful to the broader community of instructors.</p>
+<ol style="list-style-type: decimal">
+<li>Automatically populate class meeting dates based on semester schedule.</li>
+<li>Recycle portions of text across multiple syllabuses.</li>
+<li>Create well-formatted contact information for all instructors and TAs in a course.</li>
+</ol>
+<p>The code is at this <a href="https://github.com/thefallingduck/RmdSyllabus">GitHub repository</a>. In it you will find instructions for what can be replaced within the document for customizing it to your own school’s schedule.</p>
+<div id="class-schedule" class="section level3">
+<h3>Class schedule</h3>
+<p>The class schedule is set in the initial <code>R code</code> within the Rmd document. This code is reproduced below. You will want to check your semester start and end dates as well as any holidays. You can also change the class meeting days to suite your schedule. Lecture topics can be set by replacing the <code>Lecture_topic</code> vector.</p>
+<pre class="r"><code>library(timeDate)</code></pre>
+<pre><code>## Warning: package &#39;timeDate&#39; was built under R version 4.0.4</code></pre>
+<pre class="r"><code>library(tibble)
+library(dplyr)</code></pre>
+<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 4.0.5</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(knitr)
+
+#This code chunk sets up a table of meeting days for the course.
+#You can set days of the week for course meetings (e.g. Monday and Wednesday).
+#Semester start and end dates are selected and then university holidays like spring break are specified.
+
+#Days of the week that the course meets. Must be full day name in quotes.
+Days &lt;- c(&quot;Monday&quot;, &quot;Wednesday&quot;)
+
+#Semester start date for classes as YYYY/M/D.
+SemesterStart &lt;- as.Date(&quot;2022/1/10&quot;)
+
+#Semester end date for classes as YYYY/M/D.
+SemesterEnd &lt;- as.Date(&quot;2022/4/29&quot;)
+
+#Fall break start and stop date.
+FallBreak &lt;-
+  seq.Date(
+    from = as.Date(&quot;2021/10/7&quot;),
+    to = as.Date(&quot;2021/10/10&quot;),
+    by = &quot;day&quot;
+  )
+
+#Spring break start and stop date.
+SpringBreak &lt;-
+  seq.Date(
+    from = as.Date(&quot;2022/02/28&quot;),
+    to = as.Date(&quot;2022/03/06&quot;),
+    by = &quot;day&quot;
+  )
+
+#Creates a list of days within the semester.
+SemesterDays &lt;-
+  seq.Date(from = SemesterStart, to = SemesterEnd, by = &quot;day&quot;)
+
+#Add day before Thanksgiving.
+DayBeforeThnks&lt;-as.Date(holiday(
+    year = getRmetricsOptions(&quot;currentYear&quot;),
+    Holiday = c(&quot;USThanksgivingDay&quot;)))-1
+
+#Full list of holidays that there are no classes including breaks.
+Holidays &lt;-
+  c(as.Date(holiday(
+    year = getRmetricsOptions(&quot;currentYear&quot;),
+    Holiday = c(&quot;USLaborDay&quot;, &quot;USThanksgivingDay&quot;, &quot;USMLKingsBirthday&quot;)
+  )), SpringBreak, FallBreak, DayBeforeThnks)
+
+#Create a list of semester days excluding holidays.
+SemesterDays &lt;- SemesterDays[!SemesterDays %in% Holidays]
+
+#Make dataframe with all semester days.
+ClassDays &lt;- data.frame(index = 1:length(SemesterDays))
+
+#Insert dates.
+ClassDays$Date &lt;- SemesterDays
+
+#Insert weekday designation.
+ClassDays$Weekday &lt;- weekdays(ClassDays$Date)
+
+#Limit to the class meeting days.
+MeetingDays &lt;- ClassDays[ClassDays$Weekday %in% Days, ]
+
+#Create numeric list of weeks.
+Week &lt;- cut.Date(MeetingDays$Date, breaks = &quot;week&quot;)
+levels(Week) &lt;- 1:length(levels(Week))
+
+MeetingDays$Week &lt;- Week
+MeetingDays$Class &lt;- 1:nrow(MeetingDays)
+
+#Replace this with c(&quot;Lecture topic 1&quot;,...,&quot;Lecture topic N&quot;) to fill in table.
+
+Lecture_Topic &lt;- 1:nrow(MeetingDays)
+
+
+MeetingDays &lt;- bind_cols(MeetingDays, Lecture = Lecture_Topic)</code></pre>
+</div>
+<div id="recycle-text" class="section level3">
+<h3>Recycle text</h3>
+<p>To recycle text, you must first make seperate markdown documents. These can then be referred to in a portion of R code while <code>knitr</code> works its magic. This is done by including <code>child=pathto/file.md</code> in the notation for a code chunk.</p>
+<p><code>{r Academic honesty, child='general_components/academic_honesty.md'}</code></p>
+</div>
+<div id="formatted-contact-information-for-n-instructors-and-tas" class="section level3">
+<h3>Formatted contact information for N instructors and TAs</h3>
+<p>This is the portion that needs the most improvement right now, but because I will be sole instructor for classes, it is the thing I need to set aside for now. In the header for the <code>Rmd</code> document you can populate it with the information below. Both start with <code>- name:</code> for each entry.</p>
+<p>For the instructors:</p>
+<p><em>instructor:<br />
+- name: Dr. Benjamin J. Linzmeier<br />
+email: <a href="mailto:blinzmeier@southalabama.edu" class="email">blinzmeier@southalabama.edu</a><br />
+prefered_contact: Canvas LMS messages<br />
+officehours: 1:00-3:00 p.m. MTuTh<br />
+office: Life Science Building room 344<br />
+correspondence_policy: Within 24 hours on weekdays; 48 hours on weekends</em></p>
+<p>For the TAs:</p>
+<p><em>teachingassistant:<br />
+- name: Filler<br />
+email: <a href="mailto:filler@fill.com" class="email">filler@fill.com</a><br />
+officehours: W T<br />
+office: OfficeNumber<br />
+sections: ‘301’</em></p>
+<p>Go to the <a href="https://github.com/thefallingduck/RmdSyllabus">GitHub repository</a> for the most recent updates and to fork your own branch. Hopefully this is useful to other folks!</p>
+</div>

@@ -1,0 +1,141 @@
+---
+title: An Rmarkdown syllabus template
+date: 2021-12-23T20:14:10.838Z
+summary: Access an Rmd syllabus template with some explanatory text.
+draft: false
+featured: false
+authors:
+  - admin
+tags:
+  - teaching
+  - syllabus
+  - R
+image:
+  filename: featured
+  focal_point: Smart
+  preview_only: false
+---
+This is a work in progress, but I thought it would be useful to share. I am making three course syllabuses for spring semester and have put together an R markdown template to help speed up the process. There are several features that work for my new workflow and may be useful to the broader community of instructors.
+
+1. Automatically populate class meeting dates based on semester schedule.
+2. Recycle portions of text across multiple syllabuses.
+3. Create well-formatted contact information for all instructors and TAs in a course.
+
+The code is at this [GitHub repository](https://github.com/thefallingduck/RmdSyllabus). In it you will find instructions for what can be replaced within the document for customizing it to your own school's schedule.
+
+### Class schedule
+
+The class schedule is set in the initial `R code` within the Rmd document. This code is reproduced below. You will want to check your semester start and end dates as well as any holidays. You can also change the class meeting days to suite your schedule. Lecture topics can be set by replacing the `Lecture_topic` vector.
+
+```{r}
+library(timeDate)
+library(tibble)
+library(dplyr)
+library(knitr)
+
+#This code chunk sets up a table of meeting days for the course.
+#You can set days of the week for course meetings (e.g. Monday and Wednesday).
+#Semester start and end dates are selected and then university holidays like spring break are specified.
+
+#Days of the week that the course meets. Must be full day name in quotes.
+Days <- c("Monday", "Wednesday")
+
+#Semester start date for classes as YYYY/M/D.
+SemesterStart <- as.Date("2022/1/10")
+
+#Semester end date for classes as YYYY/M/D.
+SemesterEnd <- as.Date("2022/4/29")
+
+#Fall break start and stop date.
+FallBreak <-
+  seq.Date(
+    from = as.Date("2021/10/7"),
+    to = as.Date("2021/10/10"),
+    by = "day"
+  )
+
+#Spring break start and stop date.
+SpringBreak <-
+  seq.Date(
+    from = as.Date("2022/02/28"),
+    to = as.Date("2022/03/06"),
+    by = "day"
+  )
+
+#Creates a list of days within the semester.
+SemesterDays <-
+  seq.Date(from = SemesterStart, to = SemesterEnd, by = "day")
+
+#Add day before Thanksgiving.
+DayBeforeThnks<-as.Date(holiday(
+    year = getRmetricsOptions("currentYear"),
+    Holiday = c("USThanksgivingDay")))-1
+
+#Full list of holidays that there are no classes including breaks.
+Holidays <-
+  c(as.Date(holiday(
+    year = getRmetricsOptions("currentYear"),
+    Holiday = c("USLaborDay", "USThanksgivingDay", "USMLKingsBirthday")
+  )), SpringBreak, FallBreak, DayBeforeThnks)
+
+#Create a list of semester days excluding holidays.
+SemesterDays <- SemesterDays[!SemesterDays %in% Holidays]
+
+#Make dataframe with all semester days.
+ClassDays <- data.frame(index = 1:length(SemesterDays))
+
+#Insert dates.
+ClassDays$Date <- SemesterDays
+
+#Insert weekday designation.
+ClassDays$Weekday <- weekdays(ClassDays$Date)
+
+#Limit to the class meeting days.
+MeetingDays <- ClassDays[ClassDays$Weekday %in% Days, ]
+
+#Create numeric list of weeks.
+Week <- cut.Date(MeetingDays$Date, breaks = "week")
+levels(Week) <- 1:length(levels(Week))
+
+MeetingDays$Week <- Week
+MeetingDays$Class <- 1:nrow(MeetingDays)
+
+#Replace this with c("Lecture topic 1",...,"Lecture topic N") to fill in table.
+
+Lecture_Topic <- 1:nrow(MeetingDays)
+
+
+MeetingDays <- bind_cols(MeetingDays, Lecture = Lecture_Topic)
+```
+
+### Recycle text
+
+To recycle text, you must first make seperate markdown documents. These can then be referred to in a portion of R code while `knitr` works its magic. This is done by including `child=pathto/file.md` in the notation for a code chunk.
+
+`{r Academic honesty, child='general_components/academic_honesty.md'}`
+
+### Formatted contact information for N instructors and TAs
+
+This is the portion that needs the most improvement right now, but because I will be sole instructor for classes, it is the thing I need to set aside for now. In the header for the `Rmd` document you can populate it with the information below. Both start with `- name:` for each entry.
+
+For the instructors:
+
+*instructor:\
+- name: Dr. Benjamin J. Linzmeier\
+  email: blinzmeier@southalabama.edu\
+  prefered_contact: Canvas LMS messages\
+  officehours: 1:00-3:00 p.m. MTuTh\
+  office: Life Science Building room 344\
+  correspondence_policy: Within 24 hours on weekdays; 48 hours on weekends*
+  
+For the TAs:
+
+*teachingassistant:\
+- name: Filler\
+  email: filler@fill.com\
+  officehours: W T\
+  office: OfficeNumber\
+  sections: '301'*
+  
+Go to the [GitHub repository](https://github.com/thefallingduck/RmdSyllabus) for the most recent updates and to fork your own branch. Hopefully this is useful to other folks!
+
