@@ -35,8 +35,8 @@ coordinates:
 directions: Enter LSCB Building from North Side using the stairs, walk to 3rd floor, room is beyond an outer hallway entrance
 office_hours:
   - 'Monday 1 to 3 PM'
-  - 'Tuesday 1 to 3 PM'
-  - 'Thursday 1 to 3 PM'
+  - 'Tuesday 3 to 5 PM'
+  - 'Friday 10:30 AM to 12:30 PM'
 appointment_url: 'https://calendly.com/bjlinzmeier'
 contact_links:
   # - icon: twitter
