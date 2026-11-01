@@ -1,0 +1,32 @@
+{{/*
+  Google Scholar metadata (Highwire Press "citation_*" tags) for publication pages.
+  Guidelines: https://scholar.google.com/intl/en/scholar/inclusion.html
+  - One tag per author, full names, no site-owner unless they are an author of the paper.
+  - citation_pdf_url is emitted ONLY when a PDF named <folder>.pdf sits in the publication's folder
+    (the same convention the theme uses to show the PDF button). It must be an absolute URL in the
+    same directory as this page, which a page-bundle file always is.
+*/}}
+{{ if and .IsPage (eq .Section "publications") }}
+  <meta name="citation_title" content="{{ .Title | plainify }}">
+  {{ range .Params.authors }}
+    {{ $name := . }}
+    {{ with index hugo.Data.authors . }}{{ with .name }}{{ $name = .display | default $name }}{{ end }}{{ end }}
+    <meta name="citation_author" content="{{ $name }}">
+  {{ end }}
+  {{ with .Date }}<meta name="citation_publication_date" content="{{ .Format "2006/1/2" }}">{{ end }}
+  {{ $pub := .Params.publication | default dict }}
+  {{ $ptype := index (.Params.publication_types | default (slice "")) 0 }}
+  {{ with $pub.name }}
+    {{ $venue := strings.Trim (. | plainify) "*" }}
+    {{ if eq $ptype "paper-conference" }}<meta name="citation_conference_title" content="{{ $venue }}">
+    {{ else if eq $ptype "article-journal" }}<meta name="citation_journal_title" content="{{ $venue }}">{{ end }}
+  {{ end }}
+  {{ with $pub.volume }}<meta name="citation_volume" content="{{ . }}">{{ end }}
+  {{ with $pub.issue }}<meta name="citation_issue" content="{{ . }}">{{ end }}
+  {{ with .Params.hugoblox }}{{ with .ids }}{{ with .doi }}<meta name="citation_doi" content="{{ strings.TrimPrefix "https://doi.org/" . }}">{{ end }}{{ end }}{{ end }}
+  <meta name="citation_language" content="en">
+  <meta name="citation_abstract_html_url" content="{{ .Permalink }}">
+  {{ with .File }}{{ with $.Resources.GetMatch (printf "%s.pdf" .ContentBaseName) }}
+  <meta name="citation_pdf_url" content="{{ .Permalink }}">
+  {{ end }}{{ end }}
+{{ end }}

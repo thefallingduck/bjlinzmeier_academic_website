@@ -1,0 +1,32 @@
+{{- if .IsHome -}}
+{{- $a := index hugo.Data.authors "me" -}}
+{{- if $a -}}
+{{- $same := slice -}}
+{{- range $a.links -}}
+  {{- if and (not (hasPrefix .url "mailto:")) -}}{{- $same = $same | append .url -}}{{- end -}}
+{{- end -}}
+{{- $edu := slice -}}
+{{- $seen := slice -}}
+{{- range $a.education -}}
+  {{- if not (in $seen .institution) -}}
+    {{- $seen = $seen | append .institution -}}
+    {{- $edu = $edu | append (dict "@type" "CollegeOrUniversity" "name" .institution) -}}
+  {{- end -}}
+{{- end -}}
+{{- $aff := index $a.affiliations 0 -}}
+{{- $p := dict
+  "@context" "https://schema.org"
+  "@type" "Person"
+  "name" $a.name.display
+  "givenName" $a.name.given
+  "familyName" $a.name.family
+  "jobTitle" $a.role
+  "url" site.Home.Permalink
+  "affiliation" (dict "@type" "CollegeOrUniversity" "name" $aff.name "url" $aff.url)
+  "alumniOf" $edu
+  "sameAs" $same
+  "knowsAbout" (slice "Paleontology" "Geology" "Paleobiology" "Paleoclimate" "Biomineralization" "Cephalopods" "Isotope geochemistry")
+-}}
+<script type="application/ld+json">{{ $p | jsonify | safeJS }}</script>
+{{- end -}}
+{{- end -}}

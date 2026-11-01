@@ -1,14 +1,10 @@
 ---
-date: "2021-05-03"
+date: '2021-05-03'
 linkTitle: Sedimentology
 summary: Study of the creation, distribution, and interpretation of sediments.
-title: "\U0001F30A Sedimentology"
-type: book
+title: 🌊 Sedimentology
+type: docs
 ---
-
-{{< figure src="featured.jpg" >}}
-
-{{< toc hide_on="xl" >}}
 
 ## Learning objectives
 
@@ -26,13 +22,9 @@ Geologists have a place in the clean energy future. Sedimentology is useful for 
 
 This is a writing intensive course. You will be tasked with writing regularly and in a style to communicate information clearly and concisely.
 
-## Courses in this program
- 
-{{< list_children >}}
-
 ## Meet your instructor
 
-{{< mention "admin" >}}
+Benjamin J. Linzmeier
 
 ## FAQs
 
@@ -44,4 +36,4 @@ Yes. You must have taken X,Y,Z or have instructor consent.
 Every fall semester.
 {{< /spoiler >}}
 
-{{< cta cta_text="Register for the course" cta_link="https://www.southalabama.edu/colleges/artsandsci/registration.html" >}}
+{{< button url="https://www.southalabama.edu/colleges/artsandsci/registration.html" text="Register for the course" />}}
