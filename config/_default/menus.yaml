@@ -8,6 +8,9 @@ main:
   - name: Papers
     url: /#papers
     weight: 20
+  - name: Abstracts
+    url: abstracts/
+    weight: 25
   - name: Talks
     url: /#talks
     weight: 30

@@ -78,6 +78,7 @@ sections:
       folders:
       - publications
       exclude_featured: false
+      exclude_publication_type: conference-abstract
   design:
     view: citation
 - block: collection
