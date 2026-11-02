@@ -22,9 +22,6 @@ tags:
 - Scanning electron microscopy
 - oxygen
 featured: false
-links:
-- type: pdf
-  url: http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0153890
 hugoblox:
   ids:
     doi: 10.1371/journal.pone.0153890

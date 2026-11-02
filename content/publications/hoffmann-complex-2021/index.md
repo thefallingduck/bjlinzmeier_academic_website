@@ -22,9 +22,6 @@ tags:
 - paleoceanography
 - paleotemperature reconstruction
 featured: true
-links:
-- type: pdf
-  url: https://www.mdpi.com/2075-163X/11/12/1406
 hugoblox:
   ids:
     doi: 10.3390/min11121406

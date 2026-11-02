@@ -25,9 +25,6 @@ tags:
 - facies distribution
 - heteromorph ammonoids
 featured: false
-links:
-- type: pdf
-  url: http://onlinelibrary.wiley.com/doi/abs/10.1111/brv.12669
 hugoblox:
   ids:
     doi: 10.1111/brv.12669

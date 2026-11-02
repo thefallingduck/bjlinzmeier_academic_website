@@ -23,9 +23,6 @@ tags:
 - Paleoenvironments
 - Thermal stresses
 featured: false
-links:
-- type: pdf
-  url: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0223872
 hugoblox:
   ids:
     doi: 10.1371/journal.pone.0223872

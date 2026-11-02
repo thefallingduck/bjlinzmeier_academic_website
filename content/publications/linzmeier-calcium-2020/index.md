@@ -19,9 +19,6 @@ abstract: Carbon dioxide release during Deccan Traps volcanism and the Chicxulub
 tags:
 - Postdoc
 featured: true
-links:
-- type: pdf
-  url: https://pubs.geoscienceworld.org/gsa/geology/article-pdf/48/1/34/4904522/34.pdf
 hugoblox:
   ids:
     doi: 10.1130/G46431.1
