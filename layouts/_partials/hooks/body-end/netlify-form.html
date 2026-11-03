@@ -1,0 +1,27 @@
+{{- if .IsHome -}}
+{{- /* Netlify Forms only recognizes forms that exist in the built HTML with data-netlify.
+       The theme's contact form has neither, so this hidden copy tells Netlify what fields to expect,
+       and the script below tags the real, visible form so its submissions are captured. */ -}}
+<form name="contact" method="POST" action="/contact-thanks/" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name">
+  <input type="email" name="email">
+  <input type="text" name="subject">
+  <textarea name="message"></textarea>
+  <input type="text" name="bot-field">
+</form>
+<script>
+(function () {
+  var f = document.querySelector('form[action="/contact-thanks/"]:not([hidden])');
+  if (!f) return;
+  f.setAttribute('name', 'contact');
+  var fn = document.createElement('input');
+  fn.type = 'hidden'; fn.name = 'form-name'; fn.value = 'contact';
+  f.appendChild(fn);
+  // Spam trap: real visitors never see or fill this field; bots often do.
+  var trap = document.createElement('div');
+  trap.style.display = 'none';
+  trap.innerHTML = '<label>Do not fill this out: <input name="bot-field"></label>';
+  f.appendChild(trap);
+})();
+</script>
+{{- end -}}

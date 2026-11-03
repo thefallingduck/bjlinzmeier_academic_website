@@ -1,5 +1,5 @@
 ---
-title: "Friend to the cephalopods: honoring neil landman’s contributions to cephalopod paleobiology"
+title: "Friend to the Cephalopods: Honoring Neil Landman’s contributions to cephalopod paleobiology"
 authors:
 - "Margaret Yacobucci"
 - "James Witts"

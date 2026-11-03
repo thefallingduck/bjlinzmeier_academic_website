@@ -1,0 +1,40 @@
+{{- /* Netlify contact form for any page: {{< contact-form >}}
+       The data-netlify attribute is in the built HTML, so Netlify detects it with no script.
+       Styles reuse the classes of the theme's own contact form. */ -}}
+{{- $name := .Get "name" | default "student-inquiry" -}}
+<form name="{{ $name }}" method="POST" action="/contact-thanks/" data-netlify="true" netlify-honeypot="bot-field" class="space-y-6 not-prose my-8" id="ask">
+  <input type="hidden" name="form-name" value="{{ $name }}">
+  <p class="hidden"><label>Do not fill this out: <input name="bot-field"></label></p>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div>
+      <label for="{{ $name }}-name" class="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">Name</label>
+      <input type="text" id="{{ $name }}-name" name="name" required
+             class="w-full px-4 py-3 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500/50 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition-colors">
+    </div>
+    <div>
+      <label for="{{ $name }}-email" class="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">Email</label>
+      <input type="email" id="{{ $name }}-email" name="email" required
+             class="w-full px-4 py-3 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500/50 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition-colors">
+    </div>
+  </div>
+  <div>
+    <label for="{{ $name }}-status" class="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">I am a</label>
+    <select id="{{ $name }}-status" name="status"
+            class="w-full px-4 py-3 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500/50 text-gray-900 dark:text-white transition-colors">
+      <option>High school student</option>
+      <option>Community college student</option>
+      <option>Current South Alabama student</option>
+      <option>Parent or counselor</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div>
+    <label for="{{ $name }}-message" class="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">What interests you, and what would you like to learn to do?</label>
+    <textarea id="{{ $name }}-message" name="message" rows="5" required
+              class="w-full px-4 py-3 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500/50 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition-colors resize-none"></textarea>
+  </div>
+  <button type="submit"
+          class="w-full px-6 py-3 bg-primary-600 hover:bg-primary-500 text-white font-medium rounded-lg shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30 transition-all">
+    Send message
+  </button>
+</form>

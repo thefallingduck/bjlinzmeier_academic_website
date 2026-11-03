@@ -33,7 +33,7 @@ sections:
     text: ''
     button:
       text: Download CV
-      url: media/BJL_resume.pdf
+      url: cv.pdf
     headings:
       about: Biography
       education: Education
@@ -139,6 +139,7 @@ sections:
         text: Open calendar
         url: https://calendly.com/bjlinzmeier
     map_url: https://www.southalabama.edu/campusmap
-    show_form: false
+    show_form: true
+    form_action: /contact-thanks/
 ---
 
