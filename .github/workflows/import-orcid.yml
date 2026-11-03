@@ -1,0 +1,30 @@
+name: Import new publications from ORCID
+
+on:
+  schedule:
+    - cron: "17 13 1 * *"   # monthly, on the 1st
+  workflow_dispatch: {}       # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch works from ORCID and Crossref
+        run: python3 scripts/import_orcid.py
+      - name: Open pull request if anything is new
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: bot/orcid-import
+          title: "Add new publications from ORCID"
+          commit-message: "Add new publications from ORCID"
+          body-path: scripts/import_report.md
+          add-paths: content/publications/**
+          delete-branch: true

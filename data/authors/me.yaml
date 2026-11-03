@@ -1,0 +1,68 @@
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+name:
+  display: Benjamin J. Linzmeier
+  given: Benjamin
+  family: Linzmeier
+  alternate: ''
+  pronunciation: ''
+  pronouns: ''
+postnominals: []
+role: Assistant Professor of Geology
+bio: |
+  My interest in fossils was sparked by watching PBS as a child in rural central Wisconsin. I grew up surrounded by cornfields on the surface of the [Great Unconformity](https://macrostrat.org/map/#/z=8.1/x=-89.8462/y=44.3998/bedrock/lines/ "Link to Macrostrat.org") and had to content myself by collecting fieldstones (soapstone and quartz). I initially wanted to study dinosaurs. I found my way to my present work through fateful statistics and isotope geochemistry classes that occurred in conjunction with encountering the [Buckhorn Asphalt](https://link.springer.com/article/10.1007/s10347-009-0181-9 "Link to paper") part of the [Boggy Formation](https://macrostrat.org/sift/#/strat_name/212 "Link to Formation info"), in Oklahoma. I became interested in understanding the ecology of cephalopods by using geochemical methods.
+
+  I earned my B.S. at Bowling Green State University in Ohio and then moved back to Wisconsin to study in Madison. I earned my MS and PhD in geoscience from the University of Wisconsin, where I focused on applying *in situ* geochemistry to a variety of ecological questions related to modern and fossil cephalopods. I moved to Northwestern University to study ocean acidification as a postdoctoral fellow before returning to Madison for a second postdoctoral fellowship. In my spare time, I like to build things (home renovation), cook things (from sourdough to smoked meats to veggie burgers from scratch), and paint miniatures for tabletop gaming!
+affiliations:
+- name: Department of Earth Sciences, University of South Alabama
+  url: https://www.southalabama.edu/colleges/artsandsci/earthsci/
+links:
+- icon: at-symbol
+  url: mailto:blinzmeier@southalabama.edu
+  label: E-mail me
+- icon: brands/github
+  url: https://github.com/thefallingduck
+- icon: academicons/google-scholar
+  url: https://scholar.google.com/citations?user=_867HD8AAAAJ&hl=en
+- icon: academicons/researchgate
+  url: https://www.researchgate.net/profile/Benjamin-Linzmeier
+- icon: academicons/orcid
+  url: https://orcid.org/0000-0002-3148-4971
+interests:
+- Paleobiology
+- Paleoclimate
+- Biomineralization
+- Data infrastructure
+education:
+- degree: PhD in Geoscience
+  institution: University of Wisconsin - Madison
+  end: '2017-06-30'
+- degree: MS in Geoscience
+  institution: University of Wisconsin - Madison
+  end: '2012-06-30'
+- degree: BSc in Geology
+  institution: Bowling Green State University
+  end: '2009-06-30'
+experience:
+- role: Assistant Professor of Geology
+  org: University of South Alabama
+  start: '2021-08-15'
+  summary: |
+    Responsibilities include:
+
+    - Teaching
+    - Research
+    - Service
+- role: Postdoctoral Researcher
+  org: University of Wisconsin - Madison
+  start: '2019-10-01'
+  end: '2021-07-31'
+  summary: |
+    Worked in the WiscSIMS lab and on the Sparrow project.
+- role: Ubben postdoctoral fellow
+  org: Northwestern University
+  start: '2017-09-01'
+  end: '2019-09-30'
+  summary: |
+    Research ocean acidification with Calcium isotopes.

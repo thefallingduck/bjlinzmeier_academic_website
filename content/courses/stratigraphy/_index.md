@@ -1,14 +1,10 @@
 ---
-date: "2021-05-03"
+date: '2021-05-03'
 linkTitle: Stratigraphy
 summary: Study of the order and relative position of strata and their relationship to the geological time scale.
-title: "\U000023F3 Stratigraphy"
-type: book
+title: ⏳ Stratigraphy
+type: docs
 ---
-
-{{< figure src="featured.jpg" >}}
-
-{{< toc hide_on="xl" >}}
 
 ## Learning objectives
 
@@ -22,13 +18,9 @@ type: book
 
 This is a writing intensive course. You will be tasked with writing regularly and in a style to communicate information clearly and concisely.
 
-## Courses in this program
-
-{{< list_children >}}
-
 ## Meet your instructor
 
-{{< mention "admin" >}}
+Benjamin J. Linzmeier
 
 ## FAQs
 
@@ -40,4 +32,4 @@ Yes. You must have taken X,Y,Z or have instructor consent.
 Every Spring semester.
 {{< /spoiler >}}
 
-{{< cta cta_text="Register for the course" cta_link="https://www.southalabama.edu/colleges/artsandsci/registration.html" >}}
+{{< button url="https://www.southalabama.edu/colleges/artsandsci/registration.html" text="Register for the course" />}}
